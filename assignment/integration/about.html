@@ -7,8 +7,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="assets/img/burger_menu_icon.png"/> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="build/output.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
   </head>
@@ -21,6 +19,7 @@
         <div id="toggles2" class="primary-menu">
           <div class="menu-item">Exercices</div>
           <div class="menu-item">Lessons</div>
+          <div class="menu-item">Tools</div>
           <div class="menu-item">About</div>
         </div>
         <div id="toggles1" class="secondary-menu">
@@ -32,8 +31,6 @@
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>
-          <!-- <i class="fa fa-bars"></i>
-          <i class="fa fa-crosshairs"></i> -->
         </a>
         </div>
       </div>
@@ -59,15 +56,13 @@
             <h2 class="title">Company</h2>
             <p>Get to know us and meet the people behind Musicca.
             </p>
-            <!-- <h1 class="title2">Company</h1> -->
-            <div class="illustration">Company</div>
+            <div class="illustration"></div>
           </div>
 
           <div class="card">
             <h2 class="title">Mission</h2>
             <p>Read our mission statement and learn more about our goals.
             </p>
-            <!-- <h1 class="title2">Mission</h1> -->
             <div class="illustration"></div>
           </div>
 
@@ -75,44 +70,29 @@
             <h2 class="title">Contribute</h2>
             <p>Give more people the opportunity to learn Music.
             </p>
-            <!-- <h1 class="title2">Contribute</h1> -->
             <div class="illustration"></div>
           </div>
-
         </div>
-
-
-
       </div>
     </div>
-    <!-- <script>
-      function myFunction() {
-        var x = document.getElementById("toggle, toggles");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      }
-    </script> -->
+
     <script>
       function myFunction(x) {
         x.classList.toggle("change");
-        var toggles = document.querySelectorAll("#toggles2, #toggles1, #toggle3");
+
+        var toggles = [];
+        toggles.unshift("#toggles1");
+        toggles.push("#toggles2");     
         toggles.forEach(function(toggle) {
-          if (toggle.style.display === "block") {
-            toggle.style.display = "none";
-          //   toggle.querySelector("i.fa-bars").classList.add("hide");
-          // toggle.querySelector("i.fa-crosshairs").classList.remove("hide");
+          var element = document.querySelector(toggle);
+          if (element.style.display === "block") {
+            element.style.display = "none";
           } else {
-            toggle.style.display = "block";
-          //   toggle.querySelector("i.fa-bars").classList.remove("hide");
-          // toggle.querySelector("i.fa-crosshairs").classList.add("hide");
+            element.style.display = "block";
           }
         });
       }
     </script>
-
 
   </body>
 </html>
